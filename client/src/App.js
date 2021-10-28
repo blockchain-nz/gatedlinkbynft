@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 import * as Web3 from 'web3';
+import GatedLinks from './GatedLinks';
 
+// TODO: For other providers
 let web3Provider = typeof window.ethereum !== 'undefined'
 ? window.ethereum
 : new Web3.providers.HttpProvider('https://mainnet.infura.io');
@@ -9,9 +11,10 @@ let web3Provider = typeof window.ethereum !== 'undefined'
 export default class App extends React.Component {
   state = {
     accountAddress: null,
-    networkId: null
+    networkId: null,
+    links: null,
   }
-  
+
   onChangeNetwork(chainId) {
     // TODO: Set network name based on chainId mapping
     this.setState({
@@ -32,7 +35,9 @@ export default class App extends React.Component {
 
   connectWallet() {
     if (window.ethereum) {
-      window.ethereum.request({ method: 'eth_requestAccounts' }) 
+      window.ethereum.request({ method: 'eth_requestAccounts' }).then(accounts => {
+	this.handleAccountsChanged(accounts);
+      })
     } else {
       const errorMessage = 'You need an Ethereum wallet. Unlock your wallet, get MetaMask.io etc.'
       alert(errorMessage)
@@ -41,10 +46,23 @@ export default class App extends React.Component {
     this.onChangeNetwork(1);
   }
 
+  getGatedLinks() {
+    fetch("/links_user")
+      .then((res) => res.json())
+      .then((data) => this.setState({
+	      links: data //JSON.stringify(data)
+      }))
+  }
+
+  componentDidMount() {
+    this.getGatedLinks();
+  }
+
   constructor(props) {
     super(props)
 
     this.connectWallet = this.connectWallet.bind(this);
+    this.getGatedLinks = this.getGatedLinks.bind(this);
 
     window.ethereum.on('chainChanged', chainId => {
       this.onChangeNetwork(chainId);
@@ -58,10 +76,14 @@ export default class App extends React.Component {
     return (
       <div>
         <header className="App-heder">
-          <span onClick={this.connectWallet}>Click here to Link Wallet</span>
-        </header>
-        <h2>{this.state.accountAddress}</h2>
-        <h2>{this.state.networkId}</h2>
+          <input type="button" onClick={this.connectWallet} value='Click here to Link Wallet' />
+	</header>
+        <h1>
+          <p>Your account address: {!this.state.accountAddress ? "Please connect wallet" : this.state.accountAddress}</p>
+          <p>Network ID: {this.state.networkId}</p>
+        </h1>
+
+	<p>{!this.state.links ? "Loading..." : (<GatedLinks links={this.state.links}></GatedLinks>)}</p>
       </div>
     )
   }

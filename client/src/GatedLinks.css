@@ -1,0 +1,42 @@
+h1 {
+  text-align: center;
+}
+
+.GatedLinks-wrapper {
+  display: grid;
+  margin: 0;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr) ) ;
+  background-color: #f7f7f7;
+}
+
+.GatedLinks-info-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  width: 320px;
+}
+
+
+/* This applies from 600px onwards */
+@media (min-width: 1820px) {
+  .GatedLinks-wrapper {
+    margin: 0 400px;
+  }
+}
+
+@media (min-width: 1620px) {
+  .GatedLinks-wrapper {
+    margin: 0 300px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .GatedLinks-wrapper {
+    margin: 0 200px;
+  }
+}

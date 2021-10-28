@@ -1,0 +1,25 @@
+{
+  "name": "gatedlinkbynft-server.blockchain.nz",
+  "version": "1.0.0",
+  "description": "Backend for gatedlinkbynft",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blockchain-nz/gatedlinkbynft-server.git"
+  },
+  "author": "Blockchain NZ",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/blockchain-nz/gatedlinkbynft-server/issues"
+  },
+  "homepage": "https://github.com/blockchain-nz/gatedlinkbynft-server#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^3.0.0"
+  }
+}
