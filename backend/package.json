@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blockchain-nz/gatedlinkbynft-server.git"
+    "url": "git+https://github.com/blockchain-nz/gatedlinkbynft.git"
   },
   "author": "Blockchain NZ",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/blockchain-nz/gatedlinkbynft-server/issues"
+    "url": "https://github.com/blockchain-nz/gatedlinkbynft/issues"
   },
-  "homepage": "https://github.com/blockchain-nz/gatedlinkbynft-server#readme",
+  "homepage": "https://github.com/blockchain-nz/gatedlinkbynft#readme",
   "dependencies": {
     "express": "^4.17.1",
     "node-fetch": "^3.0.0"

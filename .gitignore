@@ -104,3 +104,8 @@ dist
 .tern-port
 
 configenv.sh
+
+*.swp
+
+backend/startbackend.sh
+frontend/startfrontend.sh
