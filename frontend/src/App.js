@@ -52,6 +52,10 @@ export default class App extends React.Component {
 	console.log('Links is empty')
         return
     }
+    if (this.state.accountAddress === null) {
+	console.log('Account address not set yet')
+	return
+    }
     var filterLinks = JSON.parse(JSON.stringify(this.state.links))
     const forLoop = async _ => {
     for (let link of filterLinks) {
