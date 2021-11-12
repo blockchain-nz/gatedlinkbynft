@@ -1,6 +1,8 @@
 # Demo URL to try out:
 http://ec2-3-25-230-254.ap-southeast-2.compute.amazonaws.com:3000/
 
+A demo vedio: https://www.blockchain.nz/mintgate.html
+
 # Design:
 Use React for frontend, Express for backend.
 ## Backend
