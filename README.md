@@ -33,3 +33,8 @@ YYY, has no NFT
 connect wallet with eth mainnet and choose address XXX. GatedLinks #1, #2, #4 will be shown. #3, #5 will not be shown. (the NFT minbal of GatedLinks got from MintGate API shown correct value as of 28/10/2021. While, it return 1 for all links. So #4 also shown in this scenario)  
 connect wallet with eth mainnet and choose address YYY. No GatedLinks will be shown.  
 connect wallet with other network and choose address XXX. No GatedLinks will be shown.  
+
+# Configure environment
+export HOST=<HOSTNAME>
+export MG_JWT=<JWT>
+export MG_USERID=<id>
