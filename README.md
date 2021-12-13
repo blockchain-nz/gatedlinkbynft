@@ -35,6 +35,6 @@ connect wallet with eth mainnet and choose address YYY. No GatedLinks will be sh
 connect wallet with other network and choose address XXX. No GatedLinks will be shown.  
 
 # Configure environment
-export HOST=<HOSTNAME>
-export MG_JWT=<JWT>
-export MG_USERID=<id>
+export HOST=\<HOSTNAME\>  
+export MG_JWT=\<JWT\>  
+export MG_USERID=\<id\>  
