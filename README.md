@@ -1,3 +1,6 @@
+# This is for DAO Global Hackthon : Prompt Token Gated Content Based On NFT Holding
+https://gitcoin.co/issue/mintkudos/mintgate-widget/16/100026899
+
 # Demo URL to try out:
 http://ec2-3-25-230-254.ap-southeast-2.compute.amazonaws.com:3000/ 
 
